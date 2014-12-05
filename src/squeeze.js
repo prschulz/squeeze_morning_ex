@@ -1,8 +1,9 @@
 
 var squeeze = function(str){
-  strArray = str.split('');  //split string into array
+  var strArray = str.split('');  //split string into array
+  var newArray = []; //new array to push in new word
   for (var i = 0; i < strArray.length; i++) {
-    if (strArray[i] === strArray[i+1]) strArray.splice(i,1);  //splice out the duplicate
+    if (strArray[i] !== strArray[i+1]) newArray.push(strArray[i]);  //push non-dups to new array
   }
-  return strArray.join('');  //return array as string
+  return newArray.join('');  //return array as string
 };
